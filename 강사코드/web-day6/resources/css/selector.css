@@ -1,0 +1,84 @@
+/* 태그(타입) 선택자 */
+pre {
+    text-align: center;
+    color: blue;
+}
+
+/* class 선택자 */
+.multi1 {
+    color: violet;
+}
+
+.multi3 {
+    background-color: indigo;
+}
+
+/* id 선택자 */
+#multi1 {
+    color: yellow
+}
+
+/* 전체 */
+/* * {
+    font-family: 궁서체;
+    color: black;
+    background-color: white;
+    text-align: left;
+} */
+
+
+/* 자식 */
+
+#children1>p {
+    background-color: darkblue;
+    color: white;
+}
+
+/* 자식 */
+#children1>div>p {
+    color: red;
+}
+
+/* 하위 */
+#children2 span {
+    color: brown;
+}
+
+/* 인접(동생) + */
+/* 인접(동생모두) ~ */
+span+pre {
+    color: hotpink;
+    background-color: yellow;
+}
+
+/* 가상클래스 */
+/* 방문하지 않은 링크 */
+a:link {
+    color: green;
+    font-size: 40pt;
+}
+
+/* 방문한 링크 */
+a:visited {
+    color: black;
+
+}
+
+/* 링크에 마우스 오버시 */
+a:hover {
+    background-color: aqua;
+
+}
+
+/* 링크 클릭시 */
+a:active {
+    background-color: red;
+    color: yellow
+}
+
+
+/* 체크시 커짐 */
+input:checked {
+    width: 100px;
+    height: 100px;
+}

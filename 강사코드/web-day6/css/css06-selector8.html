@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성선택자</title>
+    <style>
+        /*
+        selector[attr]{ 속성:값;}          : attr 속성명이 있는 태그를 찾는다
+        selector[attr='value']{속성:값}    : attr 속성 값과 value가 일치하는 태그 선택
+        selecotr[attr $='value']{속성:값}  : attr 속성 값과 value에 해당하는 문자가 끝나는 태그를 선택
+        selecotr[attr ^='value']{속성:값}  : attr 속성 값과 value에 해당하는 문자가 시작한는 태그를 선택
+        selecotr[attr *='value']{속성:값}  : attr 속성 값과 value에 해당하는 문자가 포함된 태그를 선택
+
+        */
+
+        input[type] {
+            color: orange;
+        }
+
+        input[type="text"] {
+            font-size: 20px;
+        }
+
+        div[id ^='complex'] {
+            color: blue;
+        }
+
+        div[id $='text1'] {
+            font-size: 20px;
+        }
+
+        div[id *='text'] {
+            background-color: yellow;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="simpletext1">simpletext1</div>
+    <div id="simpletext2">simpletext2</div>
+    <div id="complextext1">complextext1</div>
+    <div id="complextext2">complextext2</div>
+    <div id="complex">complex</div>
+    <br><br>
+    <label for="">이름</label>
+    <input type="text"> <br>
+    <label for="">아이디</label>
+    <input type="text"> <br>
+    <label for="">비밀번호</label>
+    <input type="password"> <br>
+
+</body>
+
+</html>

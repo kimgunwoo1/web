@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // onload : document를 읽어오기 전에 선언을 하면 오류 발생을 해서
+        // load완료 후 작성하는 영역
+
+        onload = function () {
+            let buttonObj = document.getElementsByTagName('button')
+
+            buttonObj[0].onclick = testDate01;
+            buttonObj[1].onclick = testDate02;
+            buttonObj[2].onclick = testDate03;
+            buttonObj[3].onclick = testDate04;
+            buttonObj[4].onclick = testDate05;
+
+
+        }
+
+        function testDate01() {
+            let inputDate = document.getElementById('today')
+            let date = new Date()
+
+            inputDate.innerHTML += date.toDateString() + '<br>'
+            inputDate.innerHTML += date.toLocaleDateString() + '<br>'
+            inputDate.innerHTML += date.toLocaleString() + '<br>'
+            inputDate.innerHTML += date.toLocaleTimeString() + '<br>'
+            //Fri Jan 27 2023 | 2023. 1. 27. | 2023. 1. 27. 오후 1:45:30  오후 1:45:30
+        }
+
+        function testDate02() {
+            let dayOfWeek = ['일', '월', '화', '수', '목', '금', '토']
+
+            let date = new Date()
+
+            let year = date.getFullYear()
+            let month = date.getMonth() + 1
+            let day = date.getDate()
+            let week = date.getDay()
+            console.log(week)
+
+            today = document.getElementById('today')
+            today.innerHTML = year + '/' + month + '/' + day + '/' + dayOfWeek[week]
+
+        }
+
+        function testDate03() {
+            // new Date(): 오늘날짜,  new Date(???)
+            let year = 2023
+            let month = 2 - 1  //2월
+            let day = 9
+            let date = new Date(year, month, day)
+
+            document.getElementById('specific').innerHTML = date.toLocaleString()
+        }
+
+        function testDate04() {
+            let dates = document.getElementById('dates').value
+
+            let date = new Date(dates)  //지정날짜를 date(Date객체)
+            let inputDate = document.getElementById('inputdate').value
+            //경과날짜
+
+            //지정날짜 + 경과날짜  (경과날짜 string->int)
+            date.setDate(date.getDate() + parseInt(inputDate))
+
+            document.getElementById('result').value = date.toLocaleDateString()
+        }
+
+        function testDate05() {
+            // start&end 값 할당  -> string
+            let start = document.getElementById('startdate').value
+            let end = document.getElementById('enddate').value
+            // string -> Date
+            let sdate = new Date(start)
+            let edate = new Date(end)
+
+            // 날짜 연산을 위해 .getTime()
+            // 연산을 하고
+            let result = (edate.getTime() - sdate.getTime()) / (1000 * 60 * 60 * 24)
+            // 1000 * 60 * 60 * 24: 초 -> 분 -> 시간 -> 일
+            // 1970.1.1 0
+
+            let ddate = new Date(edate - sdate)
+            //결과 보여주기 (result2)
+            document.getElementById('result2').value = ddate.getTime() / (1000 * 60 * 60 * 24)
+        }
+    </script>
+</head>
+
+<body>
+    <h1>오늘 날짜 구하기</h1>
+    <span id="today"></span>
+    <br>
+    <button>오늘날짜</button>
+    <button>오늘표현(!월 +1)</button>
+
+    <h1>특정날짜</h1>
+    <span id="specific"></span>
+    <br>
+    <button>특정날짜</button>
+
+
+    <h1>경과 날짜 구하기</h1>
+    <label for="">지정날짜</label>
+    <input type="date" id="dates">
+
+    <br>
+    <label for="">경과일</label>
+    <input type="number" id="inputdate">
+    <br>
+
+    <label for="">경과 후 날짜</label>
+    <input type="text" id="result" readonly>
+    <br>
+    <button>경과 날짜</button>
+
+    <h1>D-day getTime() </h1>
+    <label for="">시작날짜</label>
+    <input type="date" id="startdate">
+    <br>
+    <label for="">종료날짜</label>
+    <input type="date" id="enddate">
+    <br>
+    <label for="">남은일수</label>
+    <input type="text" id="result2" readonly>
+    <button>d-day</button>
+</body>
+
+</html>

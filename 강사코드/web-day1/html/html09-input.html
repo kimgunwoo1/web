@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption>Input Tag</caption>
+        <tr>
+            <td>TEXT TYPE</td>
+            <td><input type="text" name="uid"></td>
+        </tr>
+        <tr>
+            <td>PASSWORD TYPE</td>
+            <td><input type="password" name="upw" maxlength="10"></td>
+        </tr>
+
+        <tr>
+            <td>RADIO TYPE</td>
+            <td>
+                <input type="radio" name="gender" value="man" checked>남자
+                <input type="radio" name="gender" value="women">여자
+            </td>
+        </tr>
+
+        <tr>
+            <td>CHECKBOX TYPE</td>
+            <td>
+                <input type="checkbox" name="subject" value="java">자바
+                <input type="checkbox" name="subject" value="jsp" checked>JSP
+                <input type="checkbox" name="subject" value="iphone">아이폰
+            </td>
+        </tr>
+
+        <tr>
+            <td>FILE TYPE</td>
+            <td>
+                <input type="file" name="file">
+            </td>
+        </tr>
+
+        <tr>
+            <td>BUTTON TYPE</td>
+            <td>
+                <input type="button" value="누르세요">
+                <input type="submit" value="전송합니다">
+                <input type="reset" value="취소합니다">
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>COLOR TYPE</td>
+            <td>
+                <input type="color" name="color">
+            </td>
+        </tr>
+
+        <tr>
+            <td>DATE TYPE</td>
+            <td>
+                <input type="date" name="xyz">
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 500px;
+            height: 150px;
+            line-height: 120px;
+            text-align: center;
+            border: 0px dotted #CCCCCC;
+        }
+
+        #rect1,
+        #rect2,
+        #rect3 {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border: 1px solid #222;
+            float: left;
+            margin: 10px;
+            transition: 1s;
+        }
+    </style>
+    <script>
+        function sel() {
+            let chks = document.getElementsByName('chk')
+
+            for (let i = 0; i < chks.length; i++) {
+                let myRect = document.getElementById(chks[i].value)
+                // document.getElementById('rect1')
+                // 체크 박스 중에 선택된 체크를 확인
+                if (chks[i].checked) {
+                    myRect.style.backgroundColor = 'green'
+                    myRect.style.borderRadius = '50%' //둥글게 
+                } else {
+                    myRect.style.backgroundColor = ""
+                    myRect.style.borderRadius = ""
+                }
+            }
+        }
+        // function allSel(checked){
+        //     //1. name이 chk인 모든 요소를 가져 옵니다.
+        //     //2. name이 chk인 모든 요소의 checked 속성값을 반복하여 변경 합니다.
+        // }
+        // function clearAll(){
+        //     //1. name이 chk인 모든 요소를 가져 옵니다.
+        //     //2. name이 all인 (모든)요소를 가져옵니다.
+        //     //3. name이 all인것의 checked값을 false로 합니다
+        //     //4. name이 chk인 모든 요소의 checked 값을 false로 합니다.
+        // }
+
+        // function allSel(checked) {
+        //     //1. name이 chk인 모든 요소를 가져 옵니다.
+        //     chks = document.getElementsByName('chk')
+        //     //2. name이 chk인 모든 요소의 checked 속성값을 반복하여 변경 합니다.
+        //     for (let i = 0; i < chks.length; i++) {
+        //         rect = document.getElementById(chks[i].value)
+        //         rect.style.backgroundColor = 'green'
+        //         rect.style.borderRadius = '50%'
+
+        //     }
+        // }
+
+        // function clearAll() {
+        //     //1. name이 chk인 모든 요소를 가져 옵니다.
+        //     chks = document.getElementsByName('chk')
+        //     //2. name이 chk인 모든 요소의 checked 속성값을 반복하여 변경 합니다.
+        //     all = document.getElementsByName('all')
+        //     for (let i = 0; i < chks.length; i++) {
+        //         rect = document.getElementById(chks[i].value)
+        //         rect.style.backgroundColor = ''
+        //         rect.style.borderRadius = ''
+        //         chks[i].checked = false;
+        //         all[0].checked = false;
+
+        //     }
+        // }
+
+        // function allSel(checked) {
+        //     let chks = document.getElementsByName('chk')
+
+        //     for (let i = 0; i < chks.length; i++) {
+        //         if (chks[i].checked) {
+        //             chks[i].checked = false
+        //         } else {
+        //             chks[i].checked = true
+        //         }
+        //     }
+        // }
+
+
+        // function clearAll() {
+        //     // 1. name이 chk인 모든 요소를 가져옵니다.
+        //     let chks = document.getElementsByName('chk')
+        //     // 2. name이 all인 (모든) 요소를 가져옵니다.
+        //     let alls = document.getElementsByName('all')
+        //     // 3. name이 all인것의 checked값을 false로 합니다
+
+        //     for (let i = 0; i < alls.length; i++) {
+        //         let myRect1 = document.getElementsByName(chks[i].value)
+        //         alls[i].checked = false;
+        //     }
+
+        //     // 4. name이 chk인 모든 요소의 checked 값을 false로 합니다.
+
+        //     for (let i = 0; i < chks.length; i++) {
+        //         let myRect2 = document.getElementsByName(chks[i].value)
+        //         chks[i].checked = false;
+        //     }
+
+        //     sel()
+        // }
+
+        function allSel(checked) {
+            //1. name이 chk인 모드 요소를 가져옵니다
+            let chks = document.getElementsByName('chk')
+            //2. name이 chk인 모든 요소의 checked 속성값을 반복하여 변경합니다.
+            for (let i = 0; i < chks.length; i++) {
+                // if (checked) {
+                //     chks[i].checked = true
+                // } else {
+                //     chks[i].checked = false
+                // }
+
+                chks[i].checked = checked
+            }
+        }
+        function clearAll() {
+            // let chks = document.getElementsByName('chk')
+            // document.getElementsByName('all')[0].checked = false
+            // for (let i = 0; i < chks.length; i++) {
+            //     let myRect = document.getElementById(chks[i].value)
+            //     myRect.style.backgroundColor = ''
+            //     myRect.style.borderRadius = ''
+            //     chks[i].checked = false
+            // }
+            allSel(false)
+            document.getElementsByName('all')[0].checked = false
+            sel()
+        }
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="rect1">1</div>
+        <div id="rect2">2</div>
+        <div id="rect3">3</div>
+    </div>
+    <div id="checkbox">
+        <form>
+            <input type="checkbox" name="all" onclick="allSel(checked)">전체 선택
+            <br>
+            <input type="checkbox" name="chk" value="rect1">1
+            <br>
+            <input type="checkbox" name="chk" value="rect2">2
+            <br>
+            <input type="checkbox" name="chk" value="rect3">3
+            <br>
+            <input type="button" value="선택" onclick="sel()">
+            <input type="button" value="clear" onclick="clearAll()">
+
+        </form>
+    </div>
+</body>
+
+</html>

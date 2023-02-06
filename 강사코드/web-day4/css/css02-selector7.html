@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*         
+        형제 선택자(모든동생): 선택자 ~선택자{속성:값}
+        인접 형제 선택자(바로아래동생): 선택자 + 선택자 {속성:값} */
+
+
+        #content>.title~div {
+            font-size: 20px;
+            color: blue;
+        }
+
+        #content>.title+div {
+            font-size: 9px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>형제(인접) 선택자</h1>
+
+    <h4>셋째부터 밑으로 글자색 blue, font-size 20px <br>
+        셋째는 글자색 red, font-size 9px</h4>
+
+    <div id="content">
+        <div>첫째 입니다.</div>
+
+        <div class="title">둘째 입니다</div>
+
+        <div>셋째 입니다</div>
+        <div>넷째 입니다</div>
+        <div>다섯째 입니다</div>
+    </div>
+</body>
+
+</html>

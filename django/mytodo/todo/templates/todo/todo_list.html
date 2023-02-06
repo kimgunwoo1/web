@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>TODO 목록 앱</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+  </head>
+  <body>
+  <div class="container">
+    <h1>TODO 목록 앱</h1>
+    <p>
+      <a href="{% url 'todo:todo_post' %}"><i class="bi-plus"></i>Add Todo</a>
+      <a href="{% url 'todo:done_list' %}" class="" style="float:right">완료한 TODO 목록</a>
+    </p>
+    <ul class="list-group">
+      <!-- for문활용하여 할일보여주기 -->
+      {% for todo in todos %}
+      <li class="list-group-item">
+        <a href="{% url 'todo:todo_detail' pk=todo.pk %}">{{todo.title}}</a>
+          <!-- 중요한 일이라면 -->
+            {% if todo.important %}
+                <span class="badge badge-danger">!</span>
+            {% endif %}
+        <div style="float:right">
+          <a href="{% url 'todo:todo_done' pk=todo.pk %}" class="btn btn-danger">완료</a>
+          <a href="{% url 'todo:todo_edit' pk=todo.pk %}" class="btn btn-outline-primary">수정하기</a>
+          <a href="{% url 'todo:todo_delete' pk=todo.pk %}" class="btn btn-outline-primary">삭제하기</a>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+    <!-- 하단 페이지 -->
+    <div class=''>
+    <!-- 처음으로 -->
+    <a href="?page=1">처음</a>
+    
+    <!-- 이전페이지  -->
+
+    <!-- 페이징 -->
+    <!-- 다음페이지  -->
+    <!-- 끝으로 -->
+    <a href="?page={{todos.paginator.num_pages}}">끝</a> 
+    </div>
+  </div>
+  </body>
+
+</html>

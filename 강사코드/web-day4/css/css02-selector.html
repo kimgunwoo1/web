@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../resources/css/selector.css">
+</head>
+
+<body>
+    <!-- <div>가</div>     글꼴 빨강
+    <span>나</span>     빨강
+    <span>다</span>
+    <div>라</div>
+    <h1>A</h1>          빨강
+    <h1>B</h1> -->
+
+    <h1>선택자</h1>
+    <article>
+        <h3>타입(태그) 선택자</h3>
+        <pre>태그 이름을 지정하여 선언</pre>
+    </article>
+
+    <article>
+        <h3>class 선택자</h3>
+        <ol>
+            <li class="multi1">요소에 class를 지정하고</li>
+            <li class="multi1 multi3">지정된 class값을 사용하여 선택</li>
+            <li class="multi3">(.dot)으로 구분</li>
+        </ol>
+    </article>
+
+    <article>
+        <h3>id 선택자</h3>
+        <ul>
+            <li id="multi1">요소에 id를 지정하고</li>
+            <li id="multi2">지정된 id값을 사용하여 선택</li>
+            <li id="multi3">#으로 id구분</li>
+        </ul>
+    </article>
+
+    <article>
+        <h3>전체선택자</h3>
+        <b>*</b>
+    </article>
+
+    <article id="children1">
+        <h3>자식 선택자</h3>
+        <p>자식1</p>
+        <div>
+            <p>자식2</p>
+        </div>
+    </article>
+
+
+    <article id="children2">
+        <h3>하위 선택자</h3>
+        <div>
+            <p>
+                <span>특정 요소 하위의</span>
+            </p>
+            <span>요소를 지정할 때 선택</span>
+        </div>
+        <span>하위</span>
+    </article>
+
+    <article>
+        <h3>인접 선택자</h3>
+        <b>지정한 요소</b>
+        <span>다음에 나오는 요소 선택</span>
+        <pre>요소</pre>
+    </article>
+
+    <article>
+        <h3>가상클래스 선택자</h3>
+        <ul>
+            <li>특정 이벤트가 발생된 태그 선택</li>
+            <li><a href="http://www.naver.com">네이버</a></li>
+            <li><a href="http://www.ubuntu.com">우분투리눅스</a></li>
+            <li><input type="checkbox">체크하면 커짐!</li>
+        </ul>
+    </article>
+</body>
+
+</html>

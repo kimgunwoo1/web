@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var sum = 100
+        var total   //전역변수 (var 생략해도 됨)
+        const email = 'a@a.com'
+        if (true) {
+            const email = 'b@b.com'
+            console.log(email)  //1 b@b.com
+        }
+        console.log(email)  //2 a@a.com
+        // 같은 변수 명이라 하더라도 전역변수, 
+        // 지역변수 메모리 영역이 다르더라
+
+        if (false) {
+            total = 100
+            sum = 200      //지역변수(x) 전역 변수  (var 생략해도 됨)
+            //헷갈림, 변수의 재선언은 사용하지 않는 것이 좋다
+            // js 낮은버전에서는 지역, but 높은버젼에서는 전역
+            let xlet = 999 //지역변수
+
+            alert('total : ' + total)
+            alert('sum :' + sum)
+            alert('xlet :' + xlet)
+            alert('email :' + email)
+        }
+
+        // alert('total2 :' + total)   // 100, 전역변수
+        // alert('sum2 :' + sum)   //200 전역
+        // alert('xlet2 : ' + xlet)    //지역, 에러, not defined
+
+    </script>
+</head>
+
+<body>
+    <h1>지역변수 scoping</h1>
+
+    <p>지역변수 사용은 let활용 (var지양)</p>
+    <p>let 지역변수는 블록"{}"내 선언하여 사용 함</p>
+    <p>이것을 블록{} scorping이라고 함</p>
+    <br>
+    <p>const email : 같은 변수 명이라 하더라도 전역변수</p>
+    <p>지역변수 메모리 영역이 다르더라</p>
+
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 500px;
+            height: 120px;
+            line-height: 120px;
+            text-align: center;
+            border: 1px dotted #cccccc;
+        }
+        #rect1, #rect2, #rect3{
+            width:100px;
+            height:100px;
+            line-height: 100px;
+            border: 1px solid #222;
+            float: left;
+            margin: 10px;
+            transition : 1s;
+
+        }
+    </style>
+    <script>
+        function sel(){
+        let chks = document.getElementsByName('chk')
+
+        for(let i=0; i<chks.length; i++){
+            let myRect = document.getElementById(chks[i].value)
+
+
+            if(chks[i].checked){
+                myRect.style.backgroundColor='green'
+                myRect.style.borderRadius = '50%'
+            } else {
+                myRect.style.backgroundColor=''
+                myRect.style.borderRadius = ''
+            }
+        }
+    }
+    function allSel(checked){
+        //1. name이 chk인 모든 요소를 가져 옵니다.
+        chks = document.getElementsByName('chk')
+        //2. name이 chk인 모든 요소의 checked 속성값을 반복하여 변경합니다.
+       
+        for(let i=0; i<chks.length; i++){
+            if(chks[i].checked){
+                chks[i].checked = false;
+            }else{
+                chks[i].checked = true
+            }
+        }
+    }
+
+    
+    function clearAll(){
+        //1. name이 chk인 모든 요소를 가져 옵니다.
+        chks = document.getElementsByName('chk')
+        //2. name이 all인 요소를 가져옵니다.
+
+        //3. name이 all인것의 checked값을 false로 합니다.
+        document.getElementsByName('all')[0].checked = false
+        
+        //4. name이 chk인 모든 요소의 checked 값을 false로 합니다.
+        for(let i=0; i<chks.length; i++){
+            chks[i].checked = false;
+            sel()
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div id="rect1">1</div>
+        <div id="rect2">2</div>
+        <div id="rect3">3</div>
+    </div>
+    <div id="checkbox">
+        <form><br>
+            <input type="checkbox" name="all" onclick="allSel(checked)">전체 선택
+            <br>
+            <input type="checkbox" name="chk" value="rect1">1
+            <br>
+            <input type="checkbox" name="chk" value="rect2">2
+            <br>
+            <input type="checkbox" name="chk" value="rect3">3
+            <br>
+            <input type="button" value="선택" onclick="sel()">
+            <input type="button" value="clear" onclick="clearAll()">
+        </form>
+
+    </div>
+
+</body>
+</html>

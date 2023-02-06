@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <script>
+        function embededTest(){
+            var doc = document.getElementsByTagName('li')[0]
+            doc.style.color = "red"
+            doc.innerHTML = '<strong>javascript가 html문서(document)를 변화 시켰습니다</strong>'
+        }
+    </script>
+    <script src="/resources/js/test.js"></script>
+</head>
+<body>
+    <h1>기본문법 & 이벤트</h1>
+
+    <ol>
+        <li onclick="alert('inline!!!!!')">inline방식</li>
+        <li onclick="javascript:embededTest()">내부 작성 방식</li>
+        <li onclick="mytest()">외부 작성 방식</li>
+
+    </ol>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>표</h1>
+    <h2>기본테이블</h2>
+
+    <table>
+        <!-- table raw -->
+        <tr>
+            <th>헤더1</th>
+            <th>헤더2</th>
+            <th>헤더3</th>
+        </tr>
+
+        <tr>
+            <td>데이터1</td>
+            <td>데이터2</td>
+            <td>데이터3</td>
+        </tr>
+
+        <tr>
+            <td>데이터3</td>
+            <td>데이터4</td>
+            <td>데이터5</td>
+        </tr>
+
+        <tr>
+            <td>데이터6</td>
+            <td>데이터7</td>
+            <td>데이터8</td>
+        </tr>
+
+    </table>
+
+    <h2>추가테그</h2>
+
+    <table>
+        <caption>데이블제목</caption>
+        <colgroup>
+            <col width="20%">
+            <col width="30%">
+            <col width="40%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>컬럼1</th>
+                <th>컬럼2</th>
+                <th>컬럼3</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td rowspan="2" style="background-color:pink">1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="3">footer1</td>
+                <!-- <td>footer2</td>
+                <td>footer3</td> -->
+            </tr>
+        </tfoot>
+
+    </table>
+    <br>
+    <table>
+        <tr>
+            <td rowspan="2">1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+
+            <td rowspan="2">7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <!-- <td>12</td> -->
+            <td colspan="3" style="background-color: blue">13</td>
+            <!-- <td>14</td>
+            <td>15</td> -->
+        </tr>
+        <tr>
+            <td colspan="5">16</td>
+            <!-- <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td> -->
+        </tr>
+    </table>
+</body>
+
+</html>

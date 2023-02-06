@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var variable = 10
+        function val01(){
+            variable = variable + 'A';
+            document.getElementById('value01').innerHTML = "<b style='color:red;background:yellow'>" + variable + "</b>"
+        }
+
+        function val02(){
+            var innerVal = variable + 10
+            var doc = document.getElementById('value02')
+            doc.innerHTML = "<b style='color:red;background:yellow'>" + innerVal + "</b>"
+        }
+        function jsType(){
+            var myVal; /* 다른언어와 다름 */
+            alert(myVal +'의 타입: ' + typeof(myVal))
+
+            myVal = '문자'
+            alert(myVal +'의 타입: ' + typeof(myVal))
+
+            myVal = 34;
+            alert(myVal +'의 타입: ' + typeof(myVal))
+
+            myVal = 34.1; /* 다른언어와 다름 */
+            alert(myVal +'의 타입: ' + typeof(myVal))
+
+            myVal = true;
+            alert(myVal +'의 타입: ' + typeof(myVal))
+
+            myVal = null;
+            alert(myVal +'의 타입: ' + typeof(myVal))
+
+            myVal = function(){
+                alert('function의 타입을 알아보자')
+            }
+            alert(myVal() +'의 타입: ' + typeof(myVal))
+
+        }
+    </script>
+</head>
+<body>
+    <h1>var 변수 = 값</h1>
+    <dl>
+        <dt>변수 선언 규칙</dt>
+        <dd>대소문자 구분</dd>
+        <dd>영문, $, _로 시작</dd>
+        <dd>영문, %, _로 숫자 사용가능</dd>
+        <dd>키워드(예약어) 사용불가</dd>
+        <br>
+
+        <dt>변수의 범위</dt>
+        <dd>전역변수
+            <button onclick="val01()">확인</button>
+            <p id="value01"></p>
+        </dd>
+        <dd>지역변수 : 함수 내부에 선언
+            <button onclick="val02()">확인</button>
+            <p id="value02"></p>
+        </dd>
+    </dl>
+
+    <dt>타입의 종류
+        <button onclick="jsType()">확인</button>
+        <dd>undefined</dd>
+        <dd>string</dd>
+        <dd>number</dd>
+        <!-- int, float -->
+        <dd>boolean</dd>
+        <dd>object</dd>
+        <dd>function</dd>
+        <!-- 기억해 두자 -->
+    </dt>
+    <dt>타입 추론
+        <dd>variable에 'A'를 넣음</dd>
+        <dd>number => string</dd>
+    </dt>
+
+</body>
+</html>

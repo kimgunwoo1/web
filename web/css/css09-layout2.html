@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout</title>
+    <style>       
+        *{
+            margin: 0px;
+        }
+        #con{
+            width:700px;
+            height: 530px;
+            border: 1px solid red;
+           
+        }        
+        header{
+            width:700px;
+            height:100px;
+            background-color: aqua;
+        }
+        #gnb ul{
+            height:25px;
+        }
+        #gnb li{
+            height: 25px;
+            line-height: 25px;
+            float:left;
+            list-style-type: none;
+            margin-top: 10px;
+            border: 1px solid black;
+            padding: 5px;
+        }        
+        #gnb a{
+            text-decoration: none;
+        }
+        #lib ul{         
+            height:25px;
+            margin-right: 5px;
+            margin-top:25px;
+            
+           
+        }
+        #lib li{
+            height: 25px;
+            line-height: 25px;
+            float:right;
+            list-style-type: none;            
+            margin-bottom: 10px;
+            border: 1px solid black;
+            padding: 5px;
+        }
+        #lib a{
+            text-decoration: none;
+        }
+        #content{
+            width: 700px;
+            height:400px;
+        }
+        #section{
+            width: 390px;
+            height: 390px;
+            background-color: blue;
+            float:left;
+            padding:5px;
+        }
+        #aside{
+            width: 290px;
+            height: 390px;
+            background-color: blueviolet;
+            float:right;
+            padding:5px;
+        }
+        footer{
+            width:700px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="con">
+        <header>
+            <div id="gnb">
+                <ul>
+                    <li><a href="">gnb01</a></li>
+                    <li><a href="">gnb02</a></li>
+                    <li><a href="">gnb03</a></li>
+                    <li><a href="">gnb04</a></li>
+                    <li><a href="">gnb05</a></li>
+                </ul>
+            </div>
+            <div id="lib">
+                <ul>
+                    <li><a href="">lng01</a></li>
+                    <li><a href="">lng02</a></li>
+                    <li><a href="">lng03</a></li>
+                    <li><a href="">lng04</a></li>
+                    <li><a href="">lng05</a></li>
+                </ul>
+            </div>
+        </header>
+        <div id="content">
+            <div id="section">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi, perferendis nulla assumenda earum libero amet, expedita debitis voluptate velit quia et cumque consequatur quam temporibus ratione non! At, similique fugit.
+            </div>
+            <div id="aside">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum nostrum, illo aliquam, pariatur repellat natus tempore ipsum alias, tempora reprehenderit magnam placeat consectetur minima ratione adipisci illum rem voluptate autem.
+            </div>
+        </div>
+        <footer>office information</footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function strTest01() {
+            let str01 = 'string'
+            let str02 = 'test'
+            // + 합치기
+            console.log(str01 + str02)
+
+            //concat()
+            let newString = str01.concat(str02, '+java', '+Script')
+            console.log(newString)
+
+            //join - python : result = '_'.join(['a', 'b', 'c', 'd'])
+            let joinTest = ['a', 'b', 'c', 'd'].join('-')
+            alert(joinTest)
+        }
+
+        function strTest02() {
+            let a = 1
+            let b = 2.3
+            let c = true  //false = 0, true =1
+            let str = 'AAA'
+            let result = a + b + c + str + a
+
+            alert(result)
+            // 문자열을 만나면 모두 이후 문자열이 된다.
+        }
+        function strTest03() {
+            //1. prompt로 이름을 입력(변수명 str)
+            //2. span을 id로 선택 변수 할당(변수명 span)
+            //3. if str이 '멀캠'  => span. 멀캠님 환경합니다
+            //4. else if 'multicampus' => hello multicampus
+            //5. span에 '다시 확인해 주세요'
+
+            // let str = prompt('이름입력')
+            // let span = document.getElementById('res')
+
+            // console.log(str.toLowerCase())
+
+            // str1 = str.toLowerCase()
+            // if (str == '멀캠') {
+            //     span.innerHTML = '<b>' + str + '님 환영합니다.</b>'
+            // } else if (str1 == 'multicampus') {
+            //     span.textContent = '<b>hello</b> ' + str1
+            // } else
+            //     span.textContent = '다시 확인해 주세요'
+
+            let numVal = 10
+            if (numVal == '10') { //true
+                alert('== 연산자 사용 : 숫자 10 == 문자 10 같다')
+            }
+
+
+            if (numVal === '10') {
+                alert('!== 부호도 있어요')
+            } else {
+                alert('=== 연산자 사용 : 숫자 10 !== 문자 10 다르다')
+            }
+
+            let strObj = new String('멀캠')  //객체 타임
+
+            let strVal = '멀캠'  // string 타입 값
+
+            if (strObj == strVal) {
+                alert('strObj == strVal')
+            }
+
+            if (strObj !== strVal) {
+                alert('strObj !== strVal => true')
+            }
+        }
+
+        function strTest04() {
+            let str = "서동진 홍길동 강지윤 서동진 고은영 김현우 유준하"
+            let inputName = prompt('검색할 이름 입력')
+            console.log("indexOf : " + str.indexOf(inputName)) //왼쪽
+            console.log("lastIndexOf : " + str.lastIndexOf(inputName)) //오른쪽
+        }
+
+        function strTest05() {
+            let strVal = '0123456789:abcdefg7'
+            // : 기준으로 하여 indexOf, subString 값 가져오기
+            let startIdx = strVal.indexOf(':')      //왼쪽
+            let endIdx = strVal.lastIndexOf('7')  //오른쪽
+            // 찾지 못하면 -1 return함
+            console.log(startIdx, endIdx)
+            let result = strVal.substring(4, -3)
+            console.log(result)
+        }
+
+        function strTest06() {
+            let prop = prompt('쉼표로 구분하여 키워드를 입력해 주세요', '사과,바나나,수박,참외,패션푸릇,딸기')
+            let propArr = prop.split(',')
+            let propRes = ""  //줄바꿈된 문자 결과
+            console.log(propArr)
+            // 줄바꿈을 해서 res 표기해보기
+            // for,  length,  <br> ,  innerHTML
+
+            for (let i = 0; i < propArr.length; i++) {
+                propRes += propArr[i] + "<br>"
+            }
+
+            document.getElementById('res').textContent = propRes
+
+        }
+    </script>
+</head>
+
+<body>
+    <p>문자열합치기
+        <button onclick="strTest01()">확인</button>
+    </p>
+    <p>다른 자료형 합치기
+        <button onclick="strTest02()">확인(다른유형)</button>
+    </p>
+
+    <p>문자열 비교하기
+        <button onclick="strTest03()">확인(==, ===)</button>
+    </p>
+
+    <p>문자열 검색하기
+        <button onclick="strTest04()">확인 indexOf/lastIndexOf</button>
+    </p>
+    <p>문자열 추출하기
+        <button onclick="strTest05()">확인 substring</button>
+    </p>
+    <p>키워드 나누기
+        <button onclick="strTest06()">확인 split</button>
+    </p>
+    <span id="res"></span>
+
+</body>
+
+</html>

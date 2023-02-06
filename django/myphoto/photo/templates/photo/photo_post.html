@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><a href="{% url 'photo_list' %}">홈으로 돌아가기</a></h1>
+    <section>
+        <div>
+            <h2>New Photo</h2>
+            <!-- action이 없으면 그  자체 url로 작동한다. -->
+            <!-- edit, new 모두 하나의 html에서 작동한다. -->
+            <form method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit">완료!</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

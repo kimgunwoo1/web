@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #site {
+            border: 0px red dotted;
+            width: 700px;
+            height: 50px;
+        }
+
+        #menu {
+            border: 1px red dotted;
+            width: 700px;
+            height: 50px;
+        }
+
+        #site>a {
+            text-decoration: none;
+            display: block;
+            width: 200px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border: 1px solid #123456;
+            border-left-width: 0px;
+
+            float: left;
+
+            /* a(inline) -> block(box) -> 밑으로 -> float:left */
+        }
+
+        a:hover {
+            font-size: 25px;
+            color: red;
+        }
+
+        #menu div {
+            width: 120px;
+            height: 30px;
+            border: 1px solid #333333;
+            float: left;
+
+            text-align: center;
+            line-height: 30px;
+            border-right-width: 0px;
+        }
+
+        #alphabet {
+            border: 1px red dotted;
+            width: 700px;
+            height: 50px;
+        }
+
+        #alphabet>span {
+            display: block;
+            width: 120px;
+            height: 30px;
+            border: 1px solid grey;
+            float: left;
+            text-align: center;
+            line-height: 30px;
+            border-right-width: 0px;
+        }
+
+        #num>label {
+            display: block;
+            width: 120px;
+            height: 30px;
+            border: 1px solid grey;
+            float: left;
+            text-align: center;
+            line-height: 30px;
+            border-right-width: 0px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="site">
+        <a style="border-left-width:1px" href="http://www.naver.com">네이버</a>
+        <a href="http://www.google.com">구글</a>
+        <a href="http://www.youtube.com">유튜브</a>
+    </div>
+
+
+    <div id="menu">
+        <div>뉴스</div>
+        <div>카페</div>
+        <div style="border-right-width:1px">블로그</div>
+    </div>
+
+    <div id="alphabet">
+        <span>A</span>
+        <span>B</span>
+        <span style="border-right-width:1px;">C</span>
+    </div>
+
+    <div id="num">
+        <label>1</label>
+        <label>2</label>
+        <label style="border-right-width:1px;">3</label>
+    </div>
+
+
+
+</body>
+
+</html>

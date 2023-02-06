@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+		
+        img {
+            vertical-align: middle;
+            width: 300px;
+            height: 300px;
+        }
+        a {
+            font-size: 30px;
+            text-decoration: none;
+        }
+	</style>
+    <script>
+        // setAttribute
+        // getAttribute
+        function myFunction() {
+            let anchs = document.querySelectorAll('a')
+            let img = document.querySelector('img')
+            
+            let count = 1
+
+            anchs[0].onclick = function(){
+                let imgAlt = img.getAttribute('alt')
+                //imgAlt = 001
+
+                if(imgAlt == '001'){
+                    count = 6
+                    img.setAttribute('alt','006')
+                    img.setAttribute('src','../image/006.jpg')
+                }else {
+                    img.setAttribute('alt','00' + (--count))
+                    img.setAttribute('src','../image/00' + count + ".jpg")
+                }
+            }
+        
+        anchs[1].onclick = function(){
+                let imgAlt = img.getAttribute('alt')
+                //imgAlt = 001
+
+                if(imgAlt == '006'){
+                    count = 1
+                    img.setAttribute('alt','001')
+                    img.setAttribute('src','../image/001.jpg')
+                }else {
+                    img.setAttribute('alt','00' + (++count))
+                    img.setAttribute('src','../image/00' + count + ".jpg")
+                }
+            }
+        }
+
+
+        // num =1 //전역변수
+        // function prevImg() {
+        //     //document.getElementById('gallery').scr =
+        //     num-- // num = num-1
+        //     if(num<1){
+        //         num = 6 // 5장 숫자를 5개로 변경
+        //     }
+        //     document.getElementById('gallery').src = '../image/00' + num + '.jpg'
+        //     return false    // 이벤트 전파를 막는 것
+        // }
+        // function nextImg() {
+        //     //document.getElementById('gallery').scr =
+        //     num++ 
+        //     if(num>6){
+        //         num = 1 // 5장 숫자를 5개로 변경
+        //     }
+        //     document.getElementById('gallery').src = '../image/00' + num + '.jpg'
+        // }
+
+
+
+    </script>
+</head>
+<body onload="myFunction()">
+    <div>
+        <a href="#" id="lt" >◀︎</a>
+        <img src="../image/001.jpg" alt="001">
+        <a href="#" id="rt" >►</a>
+    </div>
+</body>
+</html>

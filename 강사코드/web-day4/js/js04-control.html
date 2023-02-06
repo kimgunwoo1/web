@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=b, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        button {
+            width: 200px;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        function ifTest() {
+            let i = prompt('숫자 1이나 2를 입력해 주세요')
+            if (i == null || i == '') {
+                // null은 취소  '' 공백이 입력된 것 
+                alert('입력해주세요')
+            } else if (i == 1) {
+                alert('one!')
+            } else if (i == 2) {
+                alert('two!')
+            } else {
+                alert('다른 숫자 입니다.')
+            }
+        }
+
+        function ifTest01() {
+            //1. id와 pw를 입력받아보자,  prompt활용
+
+            let id
+            id = prompt('아이디를 입력')
+            pw = prompt('암호를 입력')
+            console.log("id  pw" + id + "/" + pw)
+
+            if (id == 'root' && pw == '1234') {
+                alert('로그인성공')
+            } else {
+                alert('로그인실패')
+            }
+
+            // id root,  pw 1234
+            //2. id, pw가 맞는지, 틀린지 확인해보자  &&, ||
+            // alert으로 맞으면 '로그인성공', 틀리면 '로그인실패' 
+        }
+
+        function swithTest() {
+            let season = prompt('봄 여름 가을 겨울 중 좋아하는 계절은?')
+
+            switch (season) {
+                case '봄':
+                    alert("봄에는 벗꽃 엔딩")
+                    break;
+                case '여름':
+                    alert("여름은 산? 바다?")
+                    break;
+                case '가을':
+                    alert('가을에는 선선한 날씨')
+                    break;
+                case '겨울':
+                    alert('겨울에는 스키장')
+                    break;
+                default:
+                    alert('봄 여름 가을 겨울 중 입력해주세요')
+                    break;
+            }
+        }
+        function swithTest01() {
+            let season = prompt('좋아하는 달을 입력해 주세요')
+            // 1~12 입력 받고
+            // alert으로 '봄 ,여름, 가을 겨울'
+            switch (season) {
+                case '3':
+                case '4':
+                case '5':
+                    alert('봄')
+                    break;
+                case '6':
+                case '7':
+                case '8':
+                    alert('여름')
+                    break;
+                case '9':
+                case '10':
+                case '11':
+                    alert('가을')
+                    break;
+
+                case '12':
+                case '1':
+                case '2':
+                    alert('겨울')
+                    break;
+
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <button class="btn btn-primary btn-block" onclick="ifTest()">if</button>
+    <button class="btn btn-primary btn-block" onclick="ifTest01()">if-test</button>
+    <br>
+    <button class="btn btn-info btn-block" onclick="swithTest()">switch</button>
+    <button class="btn btn-info btn-block" onclick="swithTest01()">switch</button>
+    <br>
+    <button class="btn btn-danger btn-block" onclick="forTest()">for</button>
+    <br>
+    <button class="btn btn-dark btn-block" onclick="whileTest()">while</button>
+
+</body>
+
+</html>

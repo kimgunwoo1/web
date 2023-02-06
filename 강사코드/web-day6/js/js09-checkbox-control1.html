@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #colobox {
+            width: 320px;
+            height: 320px;
+            position: relative;
+        }
+
+        #red,
+        #green,
+        #blue,
+        #yellow {
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            position: absolute;
+        }
+
+        #green {
+            left: 160px
+        }
+
+        #blue {
+            top: 160px
+        }
+
+        #yellow {
+            left: 160px;
+            top: 160px
+        }
+    </style>
+    <script>
+        // onload = function () {
+        //     let allChk = document.getElementsByName('all')[0].checked
+        //     alert('onload: ' + allChk)
+
+
+        // }
+
+        function checkedall(checked) {
+            let chks = document.getElementsByName('chk')
+
+            for (let i = 0; i < chks.length; i++) {
+                // if (chks[i].checked)
+                //     chks[i].checked = false;
+                // else
+                //     chks[i].checked = true;
+                chks[i].checked = checked
+            }
+        }
+
+        function clearAll() {
+
+            checkedall(false)
+            sel()
+
+            // let chks = document.getElementsByName('chk')
+
+            // document.getElementsByName('all')[0].checked = false
+            // for (let i = 0; i < chks.length; i++) {
+            //     rect = chks[i].value
+            //     document.getElementById(rect).style.backgroundColor = ''
+            //     chks[i].checked = false;
+            // }
+
+        }
+        function sel() {
+            let chks = document.getElementsByName('chk')
+
+            for (let i = 0; i < chks.length; i++) {
+                rect = chks[i].value
+                if (chks[i].checked) {
+                    document.getElementById(rect).style.backgroundColor = rect;
+
+                }
+                else {
+                    document.getElementById(rect).style.backgroundColor = ''
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="colobox">
+        <div id="red">red</div>
+        <div id="green">green</div>
+        <div id="blue">blue</div>
+        <div id="yellow">yellow</div>
+    </div>
+
+    <input type="checkbox" name="all" onclick="checkedall(checked)">전체선택
+    <br>
+    <input type="checkbox" name="chk" value="red">빨강
+    <br>
+    <input type="checkbox" name="chk" value="green">초록
+    <br>
+    <input type="checkbox" name="chk" value="blue">파랑
+    <br>
+    <input type="checkbox" name="chk" value="yellow">노랑
+    <br>
+    <br>
+
+    <input type="button" onclick='sel()' value="선택">
+    <input type="button" onclick='clearAll()' value="clear">
+
+
+
+</body>
+
+</html>

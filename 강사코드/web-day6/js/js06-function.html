@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 매개변수(함수내) : 함수가 실행할 수 있도록 값을 변수로 처리하는 것
+        // 인수(함수호출시): 함수를 실행 할 때 매개 변수 자리에 넘겨주는 값
+        function plus() {
+            // 입력(데이터를 가져옵니다.)
+            // 변수 = document.getElementById('값').value
+            // msg = docu~~~~
+            // msg.innerHTML = result
+
+            n1 = document.getElementById('n1').value
+            n2 = document.getElementById('n2').value
+            console.log(n1 + '  ' + n2)
+            n11 = parseInt(n1)
+            n22 = parseInt(n2)
+
+            res = '<font color=red>' + (n11 + n22) + '</font>'
+            document.getElementById('msg').innerHTML = res
+        }
+        function login() {
+            // id root  , pw  1234
+            user = document.getElementById('user').value
+            pw = document.getElementById('pw').value
+
+            //처리
+            if (user == 'root' && pw == '1234') {
+                result = '로그인 성공'
+            } else {
+                result = '로그인 실패'
+            }
+            //출력
+            result = '<font color=red>' + result + '</font>'
+            document.getElementById('msg1').innerText = result;
+        }
+    </script>
+</head>
+
+<body>
+    숫자1: <input type="text" id="n1"> <br>
+    숫자2: <input type="text" id="n2"> <br>
+    <button onclick="plus()">더하기</button>
+
+    <div id="msg"></div>
+
+    <hr>
+    아이디: <input type="text" id="user"> <br>
+    비밀번호 : <input type="password" id="pw"> <br>
+    <button onclick="login()">로그인처리</button>
+    <hr>
+    <div id="msg1"></div>
+</body>
+
+</html>

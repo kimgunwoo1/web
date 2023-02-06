@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 50px;
+            height: 50px;
+        }
+
+        #gallery {
+            width: 180px;
+            height: 240px;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        num =1 //전역변수
+        function prevImg() {
+            //document.getElementById('gallery').scr =
+            num-- // num = num-1
+            if(num<1){
+                num = 6 // 5장 숫자를 5개로 변경
+            }
+            document.getElementById('gallery').src = '../image/00' + num + '.jpg'
+            return false    // 이벤트 전파를 막는 것
+        }
+        function nextImg() {
+            //document.getElementById('gallery').scr =
+            num++ 
+            if(num>6){
+                num = 1 // 5장 숫자를 5개로 변경
+            }
+            document.getElementById('gallery').src = '../image/00' + num + '.jpg'
+        }
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <p>
+            <a href="http://www.naver.com" onclick="prevImg">
+                <img src="../image/left.png" onclick='prevImg()' alt="이전그림">
+            </a>
+            <img src="../image/001.jpg" alt="gallery" id="gallery">
+            <img src="../image/right.png" onclick='nextImg()' alt="다음그림">
+
+        </p>
+    </div>
+</body>
+
+</html>

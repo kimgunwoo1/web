@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        자식 : 선택자 > 선택자{속성:값}
+            #one > .menu{...}
+        후손 또는 자손 (자식포함 모두) : 선택자 선택자{속성 : 값}
+            #melon span
+             */
+        li {
+            list-style-type: none;
+        }
+
+        #one>.menu {
+            color: blue;
+        }
+
+        #two>.menu {
+            color: red;
+        }
+
+        #apple>div {
+            background-color: yellow;
+        }
+
+        #melon span {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>자식 선택자</h1>
+
+    <h3>APP과 메론 배경컬러를 yellow</h3>
+    <div>
+        <div id="apple">
+            <div>APPLE</div>
+        </div>
+
+        <div id="melon">
+            <div>사과</div>
+            <div>
+                <span>메론</span>
+            </div>
+        </div>
+    </div>
+
+
+    <h3>list 표기를 없애고, class가 menu인 것만 파랑색</h3>
+    <ul id="one">
+        <li class="menu">MENU1</li>
+        <li>MENU2</li>
+        <li class="menu">MENU3</li>
+        <li>MENU4</li>
+        <li class="menu">MENU5</li>
+    </ul>
+
+    <h3>list 표기를 없애고, class가 menu인 것만 붉은색</h3>
+    <ol id="two">
+        <li class="menu">MENU1</li>
+        <li>MENU2</li>
+        <li class="menu">MENU3</li>
+        <li>MENU4</li>
+        <li class="menu">MENU5</li>
+    </ol>
+</body>
+
+</html>

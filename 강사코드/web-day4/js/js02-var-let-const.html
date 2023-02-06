@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var name = '홍길동'
+        var age = 10
+        age = 20  //값 재할당 가능
+        var tel = '01011112222'
+
+        var tel = '01033334444' // var 재 선언도 가능
+        console.log('내 전화번호는 : ' + tel)
+
+        let phone = '01044445555'
+        // let phone = '01055556666'    // 재 선언 오류
+        phone = '01055556666'       // 재 할당만 가능
+        console.log('내 핸드폰번호는 : ' + phone)
+
+        const PI = 3.14
+        // const PI = 2.14   재 선언 불가
+        // PI = 3.15
+        console.log('PI 값은' + PI)     // 재 할당도 불가
+
+    </script>
+</head>
+
+<body>
+    <h1>var let const</h1>
+    <p>var은 재 선언 가능 (타입추론)</p>
+    <p>let은 재 선언 불가, 재 할당은 가능</p>
+    <p>const는 재 선언, 재 할당 불가</p>
+</body>
+
+</html>

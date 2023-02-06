@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #content {
+            width: 200px;
+        }
+
+        #content>li {
+            list-style-type: none;
+            border: 1px solid #CCCCCC;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #EEEEEE;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-bottom-width: 0px;
+        }
+
+        #content a {
+            text-decoration: none;
+        }
+
+        #content>li:first-child {
+            background-color: yellow;
+            border-radius: 10px 10px 0px 0px;
+        }
+
+        #content>li:last-child {
+            background-color: pink;
+            border-radius: 0px 0px 10px 10px;
+        }
+
+        #content>li:nth-child(5) {
+            background-color: green;
+        }
+
+        #content>li:nth-child(2n) {
+            background-color: violet;
+        }
+
+        #content>li:nth-child(2n+1) {
+            background-color: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul id="content">
+            <li><a href="#">MENU1</a></li>
+            <li><a href="#">MENU2</a></li>
+            <li><a href="#">MENU3</a></li>
+            <li><a href="#">MENU4</a></li>
+            <li><a href="#">MENU5</a></li>
+            <li><a href="#">MENU6</a></li>
+            <li style="border-bottom-width: 1px"><a href="#">MENU7</a></li>
+        </ul>
+
+        <div>
+            <ul id="apple">
+                <li><a href="#">MENU1</a></li>
+                <li><a href="#">MENU2</a></li>
+                <li><a href="#">MENU3</a></li>
+                <li><a href="#">MENU4</a></li>
+                <li><a href="#">MENU5</a></li>
+                <li><a href="#">MENU6</a></li>
+                <li><a href="#">MENU7</a></li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+
+</html>

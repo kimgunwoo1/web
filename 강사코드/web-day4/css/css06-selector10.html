@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap {
+            width: 800px;
+            border: 1px solid red;
+        }
+
+        #header {
+            border-bottom: 1px solid #CCCCCC;
+        }
+
+        #content>p:nth-child(2)::first-letter,
+        #content>#history2::first-letter {
+            font-size: 2em;
+        }
+
+        #content>p:nth-child(2)::first-line,
+        #content>#history2::first-line {
+            font-weight: bold;
+            color: #32324d
+        }
+
+        #content>p:nth-child(1)::selection {
+            background-color: olive;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1>설립개요</h1>
+        </div>
+
+        <div id="content">
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed velit veniam architecto perspiciatis!
+                Soluta est cupiditate labore non neque veniam aut odio voluptate, voluptatem iure possimus repellendus,
+                eum facilis architecto.
+            </p>
+
+            <p id="history1">
+                2022년 12월 9일 <br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, placeat, consequuntur maxime minus
+                facere laudantium earum recusandae eaque, quam assumenda debitis labore ex modi magnam! Exercitationem
+                saepe recusandae quaerat incidunt.
+            </p>
+
+            <p id="history2">
+                2023년 1월 20일 <br>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, temporibus! Officia nostrum, ipsam
+                quam corrupti voluptatem repellendus velit odit doloremque earum nam ipsum neque sit alias debitis
+                reiciendis commodi! Reiciendis.
+            </p>
+        </div>
+
+    </div>
+</body>
+
+</html>

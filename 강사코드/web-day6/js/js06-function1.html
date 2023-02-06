@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function func01() {
+            alert('함수에 이름이 있습니다.')
+        }
+
+        var func02 = function () {
+            //이름이 없다. 함수가 값으로 쓰였다
+            // console.log() 로 값도 확인 할 수 있음
+
+            alert('함수에 이름이 없어요')
+        }
+
+        function func03() {
+            (function () {
+                alert();
+            })()
+        }
+
+        function literalPrn(literal) {
+            // 2. 함수가 값이기 때문에 함수가 파라메터로 전달 됨
+            // ** 3. var literal = function (msg) { alert(msg) } **
+            // 3-1. 변수-type 함수 = 값-함수
+            // 변수() , ()붙여서 실행했다. 
+            literal('함수는 값입니다.')
+        }
+
+        function func04() {
+            literalPrn(
+                function (msg) { alert(msg) }  // 1. 함수 값
+            )
+        }
+
+        function closureFunc(val) {
+            var suffix = '님 안녕하세요'
+
+            function innerFunc() {
+                alert(val + suffix)
+            }
+
+            return innerFunc; //값 (함수)
+        }
+
+        var closureTest01 = closureFunc('서동진')
+
+        // alert(closureTest01)
+        // closureTest01()  //  ()붙여야 실행
+
+        function closureTest02(val) {
+            closureFunc(val)
+        }
+
+        function makeAdder(x) {
+            let y = 1
+            return function (z) {
+                y = 100
+                return x + y + z
+            }
+        }
+
+        var add5 = makeAdder(5)
+        var add10 = makeAdder(10)
+
+        console.log(add5(2))    // 107  x:5  y:100 z:2
+        console.log(add10(2))   // 112  x:10  y:100 z:2
+
+        function nomalFun() {
+            console.log('normalFunc....')
+        }
+        nomalFun()
+        new nomalFun()
+
+        var arrowFun = () => {
+            console.log('arrowFunc.....')
+        }
+        arrowFun()
+        // new arrowFun() 
+        // TypeError : arrow 함수의 특징1 : consturctor 아님
+
+        function objFunction(name) {
+            this.name = name
+            console.log('모함수 : ' + this.name)
+            return {
+                bar: function () {
+                    console.log('리턴함수 : ' + this.name)
+                }
+            }
+        }
+        function objFunction2(name) {
+            this.name = name
+            console.log('모함수 : ' + this.name)
+            return {
+                bar: () => {
+                    console.log('리턴함수 : ' + this.name)
+                }
+            }
+        }
+        objFunction('hello').bar()
+        objFunction2('world').bar()
+
+    </script>
+</head>
+
+<body>
+    <h1>함수의 기능</h1>
+    <h2>함수의 종류</h2>
+
+    <p onclick="func01()">명시적 함수</p>
+
+    <p onclick="func02()">익명 함수</p>
+    <!-- 함수 타입 변수에 ()붙이면 함수가 실행 된다 -->
+
+    <p onclick="func03()">즉시 실행함수: 함수를 ()감싸서 값으로 만들어 사용</p>
+    <p onclick="func04()">함수 리터럴 : 함수가 값이기 때문에 함수를 파라메터로 전달</p>
+    <p onclick="closureTest01()">클로저: 리턴되는 값으로 함수를 사용</p>
+    <p onclick="closureTest02('서동진!')">클로저: 외부변수를 기억하고 외부 변수에 접근하는 함수를 의미</p>
+
+    <h2>Arrow 함수 특징</h2>
+    <p>1. new를 사용하는 객체 생성이 안된다 (constructor 기능 X)</p>
+    <p>2. arrow 함수의 this는 모 함수의 This를 지칭한다.</p>
+
+</body>
+
+</html>

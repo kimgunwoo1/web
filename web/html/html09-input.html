@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption>Input Tag</caption>
+        <tr>
+            <td>Text Type</td>
+            <td><input type="text" name="uid"></td>
+        </tr>
+        <tr>
+            <td>Password Type</td>
+            <td><input type="password" name="upw" maxlength="10"></td>
+        </tr>
+        <tr>
+            <td>Radio Type</td>
+            <td>
+                <input type="radio" name="gender" value="man" checked>남자
+                <input type="radio" name="gender" value="women">여자            
+                <input type="radio" name="level" value="1">level1            
+                <input type="radio" name="level" value="2">level2            
+            </td>
+        </tr>
+        <tr>
+            <td>Checkbox Type</td>
+            <td>
+                <input type="checkbox" name="subject" value="java">자바
+                <input type="checkbox" name="subject" value="jsp" checked>JSP
+                <input type="checkbox" name="subject" value="iphone">아이폰
+            
+            </td>
+        </tr>
+        <tr>
+            <td>File Type</td>
+            <td>
+                <input type="file" name="file">
+            </td>
+        </tr>
+        <tr>
+            <td>Button Type</td>
+            <td>
+                <input type="button" value="누르세요">                
+                <input type="submit" value="전송합니다">
+                <input type="reset" value="취소합니다">
+
+            </td>
+        </tr>
+        <tr>
+            <td>Color Type</td>
+            <td><input type="color" name="color"></td>
+        </tr>
+        <tr>
+            <td>Date Type</td>
+            <td><input type="date" name="xyz"></td>
+        </tr>
+    </table>
+</body>
+</html>

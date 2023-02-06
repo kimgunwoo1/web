@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var num  // <- hoisting
+        console.log(num)    //var은 undefined 출력
+        var num = 6
+        console.log(num)
+
+        console.log(num1) //referenceError
+        num1 = 6 //초기화
+
+        // var input
+        // if (input === undefined){
+        //     doThis()
+        // }else{
+        //     doThat()
+        // }
+    </script>
+</head>
+
+<body>
+    <h1>hoisting</h1>
+    <p>변수의 메모리 공간을 선언전에 미리 할당하는 것</p>
+    <p>변순의 선언과 초기화를 분리한후, 선언만 코드의 최상단으로 옮기는 것</p>
+    <br>
+    <p>let과 const는 호이스팅 대상이지만, undefined로 변수를 초기화 하지 않음</p>
+    <p>따라서 변수의 초기화를 수행하기 전에 읽는 코드가 먼저 나타나면 예외가 발생 함</p>
+</body>
+
+</html>

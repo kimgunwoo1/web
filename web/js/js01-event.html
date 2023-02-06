@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width:400px;
+            text-align: center;
+        }
+        #rect,
+        #rect1 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #222;
+            transition: 1s;
+            margin:10px;
+        }
+        #rect1:hover{
+            background-color: green;
+            border-radius: 50%;
+        }
+    </style>
+    <script>
+        function mover(){
+            var myRect = document.querySelector("#rect")
+            myRect.style.backgroundColor='green'
+            myRect.style.borderRadius = "50%"
+        }
+        function mout(){
+            var myRect=document.querySelector("#rect")
+            myRect.style.backgroundColor="pink"
+            myRect.style.borderRadius="20%"
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <p>도형 위로 마우스 포인터를 올려 놓으세요</p>
+        <div id="rect" onmousemove="mover()" onmouseout="mout()"></div>
+        <div id="rect1"></div>
+    </div>
+</body>
+</html>

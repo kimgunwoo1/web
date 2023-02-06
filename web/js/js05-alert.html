@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function alertFunc(){
+            alert('내용 출력! (단순대화창)')
+        }
+        function confirmFunc(){
+            if(confirm('배경색을 파란색으로 변환 ㅎㄹ까요?')){
+                alert('파란색으로 변환합니다')
+                document.body.style.backgroundColor = 'skyblue'
+            } else {
+                alert('배경색을 없앱니다')
+                document.body.style.backgroundColor = ''
+            }
+        }
+        function promptFunc(){
+            let txt = prompt("좋아하는 과목을 선택해 주세요\n [1:python 2:html 3:css 4:javascript")
+            if (txt == '1'){
+                alert('python 놀라워요')
+            } else if (txt == '2'){
+                alert('html로 뼈대를 만들어요')
+            } else if (txt == '3'){
+                alert('css로 이쁘게 꾸며요')
+            } else if( txt == '4'){
+                alert('javascript를 배우고 있어요')
+            } else{
+                alert('1-4 중에 선택해 주세요.')
+            }
+        }
+        function promptFunc01(){
+            // 1. 입력을 받아 본다.
+            // 나이를 받아서 age 변수에 넣어 봅니다.
+            let age = prompt('나이를 입력하세요')
+            // 2. 숫자로 연산하기 위해서는 문자를 숫자로 변환해 주어야 합니다.
+            // age2 = parseInt(age)
+            let age2 = parseInt(age)
+            // 3. 입력된 값을 프린트 해보자 (alert)
+            // alert("내년 나이는 :" +)
+            // 내 후년 나이는...
+            age_next = age2+1
+            age_next2 = age2+2
+            alert('내년 나이는 :' + age_next)
+            alert('내 후년 나이는...' + age_next2)
+
+
+            // ------------------------------
+            // 입력을 받아요. 가로. 세로
+            // 사각형 면적을 구해서 출력해 봅니다.
+            let width = prompt('가로 길이 입력:')
+            let height = prompt('세로 길이 입력:')
+            let s = parseFloat(width*height)
+            alert('면적은 ' + s + ' 입니다.')
+        }
+    </script>
+</head>
+<body>
+    <h1>window 객체의 대화형 메소드</h1>
+    <p>alert() : 경고, 코드 디버깅 (return값 없음)
+        <button onclick="alertFunc()">확인</button>
+    </p>
+    <p>confirm() : 확인/취소 (return : true/false)
+        <button onclick="confirmFunc()">확인</button>
+    </p>
+    <p>prompt() : 텍스트 박스, 확인/취소버튼 (return : 텍스트('')/null)
+        <button onclick="promptFunc()">확인</button>
+        <button onclick="promptFunc01()">확인(나이구하기)</button>
+    </p>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px dashed blue;
+            margin: 0px;
+        }
+        #con{
+            margin: 0px;
+            width:700px;
+            height:500px;
+        }
+        #header {
+            color:blueviolet;
+            text-align: center;
+            background-color: cornflowerblue;
+        }
+        #nav{
+            height: 100px;
+            text-align: center;
+        }
+        #nav li{
+            border:1px solid ;
+            list-style-type: none;
+            width:121px;
+            float:left;
+            text-align: center;
+            color:brown;            
+            font-weight: bold;
+            
+        }
+        #nav a{
+            text-decoration: none;
+
+        }
+        #nav li:hover{
+            background-color: pink;
+            
+            cursor:pointer;
+        }
+        #wrap{
+            width:700px;
+            height: 300px;
+        }
+        #content{
+            width:72%;
+            height:300px;
+            line-height: 300px;
+            float: left;
+            text-align: center;
+            background-color: darkgoldenrod;
+        }
+        #banner{
+            width:26%;
+            height:300px;
+            line-height: 300px;
+            float:right;
+            text-align: center;
+            background-color: beige;
+        }
+        #footer{
+            border:1px dotted red;
+            width:698px;
+            text-align: center;
+            height: 22px;
+            line-height: 25px;
+            background-color: deepskyblue;
+            margin: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div id="con">
+        <div id="header"><h2>Header</h2></div>
+        <div id="nav">
+            <p>NAVIGATION</p>
+            <ul>
+                <li> <a href="#"> menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+                <li><a href="#">menu4</a></li>
+                <li><a href="#">menu5</a></li>
+            </ul>
+        </div>
+
+        <div id="wrap">
+            <div id="content">CONTENT</div>
+            <div id="banner">BANNER</div>            
+        </div>
+        <div id="footer">FOOTER</div>
+
+    </div>
+</body>
+</html>

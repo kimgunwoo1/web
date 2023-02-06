@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="var01/">var01</a>
+    <br>
+    <a href="var02/">var02</a>
+    <br>
+    <!-- var01 : list형태의 변수값 전달 {{lst.0}} -->
+    <!-- var02 : dictionary 형태의 변수값 전달 {dct.name} -->
+    <a href="for/">for</a>
+    <br>
+    <a href="if01/">if01</a>
+    <br>
+    <a href="if02/">if02</a>
+    <br>
+    <a href="req/?q=python">GET</a>
+    <br>
+    <form action="req/" method="POST">
+        {% csrf_token %}
+        <input type="text" name="id">
+        <input type="submit" value="POST">
+    </form>
+    <br>
+    <a href="statics/">Static(css/js)</a>
+    
+</body>
+</html>

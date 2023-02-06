@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function numberObj() {
+            let num01 = 3
+            let num02 = new Number(3)
+
+            console.log(typeof (num01), typeof (num02))
+            console.log((num01 == num02), (num01 === num02)) //true,false
+            // ==,  ===
+
+            //string -> number
+            console.log(parseInt('1') + 1)  //2
+            console.log(parseInt('1.8') + 1)  //2  -> 내림
+            console.log(parseFloat('1.5') + 1)  //2.5
+
+            console.log(parseFloat('a') + 1)  //NaN
+
+            // NaN : Not a Number
+            // null,  undefined, NaN,  ''
+            // null(값이 없음) ''(''값이있음),  
+            // undefined(선언만됨), NaN(오류아님)
+
+            let num = prompt('숫자만 입력해 주세요')
+            if (isNaN(num)) {
+                alert('숫자가 아닙니다.')
+            } else {
+                alert('숫자 입니다.')
+            }
+        }
+
+        function randomNum() {
+            //Math.random() : 0 <= x < 1
+            //Math.floor() : 내림 ,  Math.round() : 반올림,   Math.ceil():  올림
+
+            let min = 5
+            let max = 8
+
+            let ran = Math.round(Math.random() * (max - min) + min)
+            // Math.random() 0~1
+            // (0~1) * 3 :  0~3
+            // 0~3  + min(5) : 5~8
+            console.log(ran)
+        }
+
+        function randomBG() {
+            let rnum = function () {
+                return Math.round(Math.random() * 255)  //0~255
+            }
+
+            // style 색상표현 : rgb(255,255,255)
+            document.body.style.backgroundColor = "rgb(" + rnum() + "," + rnum() + "," + rnum() + ")"
+        }
+        function randomCircle() {
+            // random 0~200
+            let rnum = Math.floor(Math.random() * 200)  //지름
+            // id circle node를 변수에 할당
+            let circle = document.getElementById('circle')
+
+            // width , height 
+            circle.style.width = rnum + 'px'
+            circle.style.height = rnum + 'px'
+            // border
+            circle.style.border = '1px solid black'
+            // borderRadius  =  //반지름
+            circle.style.borderRadius = '50%'  // Math.floor(rnum / 2) + 'px' //50%
+
+        }
+        function circleArea() {
+            // 넓이 : PI * 반지름 * 반지름
+            // 둘레 : PI * 지름 
+            //     Math.PI 사용
+
+            let div = document.getElementById('circle')
+            console.log(div)
+
+            radius = document.getElementById('circle').style.width
+            console.log('radius :' + radius)
+            var index;
+
+            //indexOf
+            console.log(radius.indexOf('px'))
+            indexOf = radius.indexOf('px')
+            console.log(radius.substring(0, indexOf))
+
+            //parseInt
+            console.log(parseInt(radius))
+
+            for (var i = 0; i < radius.length; i++) {
+
+                if (radius[i] == 'p') {
+                    console.log(11111)
+                    index = i
+                    break;
+                }
+            }
+
+            radius = Number(radius.substring(0, index))
+
+            console.log(radius)
+            console.log('넓이 :', Math.PI * radius * radius)
+            console.log('둘레 :', Math.PI * radius * 2)
+
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>숫자</h1>
+
+    <button onclick="numberObj()">숫자</button>
+    <button onclick="randomNum()">난수</button>
+    <button onclick="randomBG()">난수활용(배경색)</button>
+
+    <button onclick="randomCircle()">원그리기</button> <br>
+    <button onclick="circleArea()">원의 넓이/둘레</button>
+    <br><br><br><br><br><br><br>
+    <div id="circle"></div>
+
+    <br>
+    원의 넓이 : <span id="area"></span> <br>
+    원의 둘레 : <span id="len"></span> <br>
+
+
+
+
+</body>
+
+</html>

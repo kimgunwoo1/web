@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="html10-formres.html" method="get"> <!-- post 방식 지원하지 않음 -->
+        <fieldset> <!--사각형 영역 만들기-->
+            <legend>회원가입</legend> <!--이름을 넣어 준다 Title-->
+
+            <div>ID : <input type="text" name="id"></div> <!--type에 많은 종류가 있음,  name의 key와 같다. -->
+            <div>PW : <input type="password" name="pw"> </div> <!-- input tag name 속성 매우 중요함 -->
+
+            <p>
+                email 수신 여부 <br>
+                <input type="radio" name="rdo" value="y">y<br> <!--같은 네임중 하나만 선택 가능-->
+                <input type="radio" name="rdo" value="n">n<br>
+
+            </p>
+            <p>
+                관심분야<br> <!-- name을 동일한 이름 한개로 넣고 하기도 함-->
+                <input type="checkbox" name="python" value="python">PYTHON<br>
+                <input type="checkbox" name="DB" value="database">DataBase<br>
+                <input type="checkbox" name="web" value="web">WEB<br>
+            </p>
+            <p>
+                하고싶은말<br>
+                <textarea name="etc" cols="70" rows="15"></textarea>
+            </p>
+
+            <p>
+                <input type="button" value="그냥 버튼">
+                <input type="reset" value="취소">
+                <input type="submit" value="전송">
+
+            </p>
+        </fieldset>
+    </form>
+</body>
+
+</html>

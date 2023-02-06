@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var num = 1
+        function searchPar(){
+            var child02 = document.getElementsByName('p')[1]
+            var div = child02.parentNode
+
+            console.log(div.nodeName)
+            console.log(div)
+            div.style.backgroundColor='pink'
+        }
+        function searchChi(){
+            // div =    *ByTagName 여러개임으로 인덱스 값도 고려
+            let div = document.getElementsByName('div')[0]
+
+            // divChildren 변수에 childNodes()함수 활용하여 자식 노드 할당
+            let divChildren = div.childNodes
+            console.log(divChildren)
+        }
+    </script>
+</head>
+<body>
+    <h1>부모탐색, 자식탐색</h1>
+    <div>
+        <p>child01</p>
+        <p>child02</p>
+        <!-- child02에 배경색을 blue로 변경 해보기 -->
+        <p>child03</p>
+    </div>
+
+    <button onclick="searchPar()">부모탐색 child02.parentNode</button>
+    <br>
+    <button onclick="searchChi()">자식탐색 div.childNodes</button>
+
+</body>
+</html>
