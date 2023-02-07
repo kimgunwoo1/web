@@ -9,4 +9,4 @@ urlpatterns = [
     path('done/', views.done_list, name = 'done_list'),         # 완료한 목록 리스트
     path('done/<int:pk>/',views.todo_done, name='todo_done'),   # 할일 완료 표기
     path('<int:pk>/delete/', views.todo_delete, name='todo_delete'), # 지우기
-]
+] 

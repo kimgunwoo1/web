@@ -37,9 +37,28 @@
     <a href="?page=1">처음</a>
     
     <!-- 이전페이지  -->
-
+      {% if todos.has_previous %}
+        <a href="?page={{todos.previous_page_number}}">이전</a>
+      {% else %}
+        이전
+      {% endif %}
     <!-- 페이징 -->
+    {% for i in todos.paginator.page_range %}
+      {% if todos.number >= i|add:-5 and todos.number <= i|add:+5 %}
+      <!-- django template filter https://cocook.tistory.com/61 -->
+        {% if todos.number == i %}
+            <span style="color:red">{{i}}</span>
+        {% else %}
+        <a href="?page={{i}}">{{i}}</a>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
     <!-- 다음페이지  -->
+      {% if todos.has_next %}
+        <a href="?page={{todos.next_page_number}}">다음</a>
+      {% else %}
+        다음
+      {% endif %}
     <!-- 끝으로 -->
     <a href="?page={{todos.paginator.num_pages}}">끝</a> 
     </div>
